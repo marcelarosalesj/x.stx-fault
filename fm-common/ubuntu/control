@@ -1,0 +1,20 @@
+Source: fm-common
+Section: unknown
+Priority: extra
+Maintainer: Marcela Rosales <marcelarosalesj@gmail.com>
+Build-Depends: debhelper (>=9),
+               libpq-dev,
+               uuid-dev,
+               python2.7-dev
+Standards-Version: 3.9.6
+Homepage: <insert the upstream URL, if relevant>
+
+Package: fm-common-dev
+Architecture: amd64
+Pre-Depends: ${misc:Depends},
+             ${shlibs:Depends},
+             libpq-dev,
+             uuid-dev,
+             python-dev
+Description: This package contains the stx-fault/fm-common project.
+
