@@ -1,0 +1,16 @@
+Source: fm-mgr
+Section: unknown
+Priority: extra
+Maintainer: Marcela Rosales <marcelarosalesj@gmail.com>
+Build-Depends: debhelper (>=9),
+               uuid-dev,
+               libsystemd-dev,
+               fm-common-dev
+Standards-Version: 3.9.6
+Homepage: https://git.openstack.org/cgit/openstack/stx-fault
+
+Package: fm-mgr
+Architecture: amd64
+Pre-Depends: ${misc:Depends},
+             ${shlibs:Depends}
+Description: This package contains the stx-fault/fm-mgr project.
