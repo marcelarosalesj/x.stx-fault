@@ -8,7 +8,7 @@ Build-Depends: python-setuptools (>= 0.6b3),
                dh-python
 
 Standards-Version: 3.9.6
-Package: fm-api-doc
+Package: fm-api
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}
 Description: This package contains the fm-api project.
