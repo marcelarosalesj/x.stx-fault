@@ -2,12 +2,13 @@
 
 export MAJOR=1
 export MINOR=0
+export ROOT=debian/tmp
 
 %:
 	dh $@
 
 override_dh_auto_install:
-	make DESTDIR=/build/fm-common-1.0/debian/fm-common-dev \
+	make DESTDIR=${ROOT} \
 		BINDIR=/usr/bin \
 	    LIBDIR=/usr/lib \
 		INCDIR=/usr/include \
@@ -15,7 +16,10 @@ override_dh_auto_install:
 		MAJOR=${MAJOR} MINOR=${MINOR} install
 	python setup.py build
 	python setup.py bdist_wheel
-	python setup.py install --root /build/fm-common-1.0/debian/fm-common-dev --install-data=/usr/share --prefix=/usr
-	mkdir -p /build/fm-common-1.0/debian/fm-common-dev/wheels/
-	install -m 644 dist/*.whl /build/fm-common-1.0/debian/fm-common-dev/wheels/
+	python setup.py install --root ${ROOT} --install-data=/usr/share --prefix=/usr
+	mkdir -p ${ROOT}/wheels/
+	install -m 644 dist/*.whl ${ROOT}/wheels/
 
+override_dh_installdocs:
+
+override_dh_installchangelogs:

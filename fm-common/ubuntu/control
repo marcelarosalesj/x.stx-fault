@@ -14,7 +14,7 @@ Build-Depends: python-setuptools,
 Standards-Version: 3.9.6
 Homepage: <insert the upstream URL, if relevant>
 
-Package: fm-common-dev
+Package: fm-common
 Architecture: amd64
 Build-Depends: python-setuptools,
                python-all,
@@ -22,3 +22,15 @@ Build-Depends: python-setuptools,
                dh-python,
                python2.7-dev
 Description: fm-common.
+
+Package: fm-common-dev
+Architecture: amd64
+Description: Titanium Cloud platform Fault Management Client Library that provides APIs for applications to raise/clear/update active alarms. This package contains symbolic links, header files, and related items necessary for software development.
+
+Package: fm-common-doc
+Architecture: amd64
+Description: Contains fmAlarm.h which is to be used by fm-doc package to validate the Alarms & Logs Doc Yaml file.
+
+Package: fm-common-wheels
+Architecture: amd64
+Description: Contains python wheels for fm-common.
