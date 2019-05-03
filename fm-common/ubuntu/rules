@@ -1,18 +1,21 @@
 #!/usr/bin/make -f
-# You must remove unused comment lines for the released package.
-#export DH_VERBOSE = 1
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+export MAJOR=1
+export MINOR=0
 
 %:
 	dh $@
 
 override_dh_auto_install:
-	dh_auto_install -- LIBDIR=/usr/local/lib
-
-override_dh_usrlocal:
-
-#override_dh_install:
-#	dh_install --list-missing -X.pyc -X.pyo
+	make DESTDIR=/build/fm-common-1.0/debian/fm-common-dev \
+		BINDIR=/usr/bin \
+	    LIBDIR=/usr/lib \
+		INCDIR=/usr/include \
+		CGCS_DOC_DEPLOY=/opt/deploy/cgcs_doc \
+		MAJOR=${MAJOR} MINOR=${MINOR} install
+	python setup.py build
+	python setup.py bdist_wheel
+	python setup.py install --root /build/fm-common-1.0/debian/fm-common-dev --install-data=/usr/share --prefix=/usr
+	mkdir -p /build/fm-common-1.0/debian/fm-common-dev/wheels/
+	install -m 644 dist/*.whl /build/fm-common-1.0/debian/fm-common-dev/wheels/
 

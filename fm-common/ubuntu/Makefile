@@ -7,7 +7,7 @@ all: clean
 clean:
 	rm -rf results/
 	rm -rf *.tar.gz
-	rm -rf $(NAME)-0.0/
+	rm -rf $(NAME)-1.0/
 	rm -rf *.deb
 	rm -rf *.debian.tar.xz
 	rm -rf *orig.tar.gz
