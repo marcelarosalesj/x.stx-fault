@@ -5,6 +5,8 @@ Build-Depends: python-setuptools,
                python-all,
                debhelper,
                dh-python
+               fm-common-dev
+Standards-Version: 1.0.0
 
 Package: fm-rest-api
 Architecture: all
