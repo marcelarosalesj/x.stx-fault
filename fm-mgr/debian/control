@@ -1,11 +1,11 @@
 Source: fm-mgr
 Priority: extra
 Maintainer: Marcela Rosales <marcela.a.rosales.jimenez@intel.com>
-Build-Depends: debhelper (>=9),
+Build-Depends: debhelper,
                uuid-dev,
                libsystemd-dev,
                fm-common-dev
-Standards-Version: 3.9.6
+Standards-Version: 1.0.0
 
 Package: fm-mgr
 Architecture: amd64
