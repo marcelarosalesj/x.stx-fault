@@ -10,15 +10,10 @@ Build-Depends: python-setuptools,
                python2.7-dev,
                libpq-dev,
                uuid-dev
-Standards-Version: 3.9.6
+Standards-Version: 1.0.0
 
 Package: fm-common
 Architecture: amd64
-Build-Depends: python-setuptools,
-               python-all,
-               debhelper,
-               dh-python,
-               python2.7-dev
 Depends: libpq-dev,
          uuid-dev,
          python-dev
